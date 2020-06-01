@@ -1,0 +1,10 @@
+<ul class="c-nav js-header-nav d-none d-md-block">
+    {% for item in main_menu.items %}
+        <li class="{{ item.classes | join(' ') }}">
+            <a href="{{ item.get_link }}" target="{{item.target?:"_self"}}">{{ item.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+<div class="d-inline-block d-md-none">
+    {% include "components/burger.twig" %}
+</div>

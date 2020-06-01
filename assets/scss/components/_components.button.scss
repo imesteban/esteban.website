@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Button
+   ========================================================================== */
+
+.c-button {
+
+	position: relative;
+	@include font-bold();
+	font-size: 26px;
+	line-height: 1;
+	color: theme-color( "white" );
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	margin: 0;	
+	cursor: pointer;
+	outline: none;
+	border-radius: 0;
+	background-color: theme-color( "dark" );
+	transition: color .18s ease-out, background-color .18s ease-out;
+	overflow: hidden;
+	font-size: 24px;
+	padding: 14px 40px;
+	@include media-breakpoint-up( md ){
+		font-size: 26px;
+		padding: 14px 65px;
+	}
+	z-index: 1;
+
+	&,
+	&:hover,
+	&:active {
+		
+		color: theme-color( "white" );
+		text-decoration: none;
+	
+	}
+
+	&:hover {
+
+		background-color: lighten( theme-color( "dark" ), 2.5% );
+		color: theme-color( "white" );
+	
+	}
+
+}
+
+
+.c-button--ghost {
+
+	color: theme-color( "dark" );
+	border: 2px solid theme-color( "dark" );
+	background-color: transparent;
+
+	&:hover {
+		color: theme-color( "white" );
+		background-color: theme-color( "dark" );
+	}
+}
+
+// Sizes
+//
+.c-button--medium {
+	font-size: 22px;
+	padding: 14px 30px;
+}

@@ -1,0 +1,26 @@
+.c-featured-title {
+
+    color: theme-color( "white" );
+    letter-spacing: 2px;
+    font-size: 35px;
+    line-height: 45px;
+    @include media-breakpoint-up( md ){
+        font-size: 54px;
+        line-height: 66px;    
+    }
+    @include media-breakpoint-up( lg ){
+        font-size: 62px;
+        line-height: 74px;
+    }
+
+    
+    span {
+        display: table;
+        position: relative;
+        padding: 0px;
+        background-color: theme-color( "dark" );
+
+        + span { margin-top: 10px; }
+    }
+
+}

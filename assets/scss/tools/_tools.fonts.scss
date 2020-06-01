@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+@font-face {
+	font-family:'effra-regular';
+	src:url('../fonts/Effra_Rg.eot');
+	src:url('../fonts/Effra_Rg.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Effra_Rg.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family:'effra-medium';
+	src:url('../fonts/Effra_Md.eot');
+	src:url('../fonts/Effra_Md.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Effra_Md.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+}
+
+
+@mixin font-regular(){
+	font-family: 'effra-regular', $font-family-sans-serif;
+}
+
+@mixin font-medium(){
+	font-family: 'effra-medium', $font-family-sans-serif;
+}
+
+@mixin font-bold(){
+	font-family: 'effra-medium', $font-family-sans-serif;
+  	font-weight: bold;
+}

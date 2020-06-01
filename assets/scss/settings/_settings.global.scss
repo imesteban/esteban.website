@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Global variables
+   ========================================================================== */
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 20px !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: ($spacer * .75),
+    4: $spacer,
+    5: ($spacer * 1.5),
+    6: ($spacer * 2),
+    7: ($spacer * 2.5),
+    8: ($spacer * 3),
+    9: ($spacer * 4),
+    10: ($spacer * 7)
+  ),
+  $spacers
+);
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-gutter-width:           20px !default;
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 720px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$container-max-width:         1100px;
+$container-padding:           20px;// 15px;
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// Font family
+$font-family-base:            effra-regular;
+$font-family-bold:            effra-medium;
+
+// Font weight
+$font-weight-regular:         400;
+$font-weight-bold:            700;
+$font-weight-bolder:          900;
+
+$font-size-base-px:           22px;
+$font-size-base:              1.375rem;// => 22px
+$line-height-base:            1.45;
+
+$headings-font-weight:        $font-weight-regular;
+$headings-font-family:        $font-family-bold;
+$headings-font-weight:        $font-weight-bold;
+$headings-line-height:        1.65;
+
+// Links
+$link-hover-decoration:       none;
+
+
+/* Colors
+   ========================================================================== */
+
+$white: 				  #FFFFFF;
+$dark:            #20202e;
+$lightblue:       #DBF1FC;
+$logan: 				  #9a9ab9;
+$eggblue:				  #00deb6;
+$jaguar:          #20202e;
+$lighterjaguar:	  #262637;
+
+$theme-colors: (
+  'white':        $white,
+  'dark':         $dark,
+  'lightblue':    $lightblue,
+  'primary': 			$jaguar,
+  'logan':        $logan,
+  'secondary':    $eggblue,
+  'light':        $white,
+);	
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+//$body-color:            #012f50;
+
+
+/* Paths
+   ========================================================================== */
+
+$path-images: 			"../images";

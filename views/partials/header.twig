@@ -1,0 +1,31 @@
+<header class="c-header {{is_fixed?"c-header--fixed"}} js-header">
+    <div class="c-header__inner">
+        <div class="container-fullwidth">
+            <div class="row align-items-center">
+                <div class="col-8 col-md-4">
+                    {% include "components/logo.twig" %}
+                </div>
+                <div class="col-4 col-md-8">
+                    <div class="u-fs-zero text-right">
+                        {% include "components/navigation.twig" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% if is_fixed %}
+
+    {% set script %}
+        <script type="text/javascript">
+            
+            $( document ).ready( function() {
+                APP.sticky_header();
+            } );
+
+        </script>
+    {% endset %}
+    {{ add_to_footer( script ) }}
+
+{% endif %}

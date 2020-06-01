@@ -1,0 +1,41 @@
+.c-header {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color .18s ease-in-out;
+    display: table;    
+    // padding: 30px 0;
+    // @include media-breakpoint-up( md ){
+    //     padding: 40px 0;
+    // }
+
+    &__inner {
+        display: table-cell;
+        vertical-align: middle;
+        height: 75px;
+        @include media-breakpoint-up( md ){
+            height: 105px;
+        } 
+    }
+
+    &--fixed {
+        position: fixed;
+    }
+
+    &--open {
+        background-color: theme-color( "dark" );
+        // padding: 25px 0;
+        // @include media-breakpoint-up( md ){
+        //     padding: 30px 0;
+        // }  
+        .c-header__inner {
+            height: 75px;
+        }      
+    }
+    
+}

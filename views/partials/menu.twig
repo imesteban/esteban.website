@@ -1,0 +1,27 @@
+{# Menu #}
+
+<div class="c-menu-wrapper js-menu">
+    <div class="c-menu">
+        <nav class="px-4 px-md-6 pb-3">
+            <ul class="list-unstyled js-main-menu text-center">
+                <li>
+                    <a href="{{site.url}}">Home</a>
+                </li>
+                {% for item in main_menu.items %}
+                    <li class="list-unstyled-item {{ item.classes | join(' ') }}">
+                        <a href="{{ item.get_link }}">{{ item.title }}</a>
+                    </li>
+                {% endfor %}
+                <li class="pt-5">
+                    <div class="text-center">
+                        <a href="tel:{{options.telephone}}" class="c-button c-button--mediums">Phone me</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <a href="#" class="c-menu__close js-menu-close">
+            <img src="{{images_url}}/icons/close-menu.svg" class="svg" alt="Close">
+        </a>
+    </div>
+</div>

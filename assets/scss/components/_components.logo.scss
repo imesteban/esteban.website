@@ -1,0 +1,34 @@
+.c-logo {
+
+    position: relative;
+    display: inline-block;
+	font-size: 0;
+	margin: 0;
+	
+	/* Website's name */
+	> span { display: none; }
+
+    a { display: block; }    
+
+    img, svg {
+        transition: width .16s ease-out;
+        width: 72px;
+        @include media-breakpoint-up( md ){
+            width: 97px;
+        }
+    }
+
+    &--footer {
+        svg #logo-svg {
+            fill: theme-color( "dark" );
+        }
+    }
+
+}
+
+.c-logo.c-logo--shrink:not(.c-logo--footer) {
+
+    img, svg {
+        width: 72px;
+    }
+}

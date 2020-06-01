@@ -1,0 +1,12 @@
+{# 
+Social networks list 
+#}
+<ul class="list-inline">
+	{% for social_network in social_networks %}
+		<li class="list-inline-item">
+	 		<a href="{{ social_network.url }}" class="c-social__icon " target="_blank">
+	 			<img src="{{ images_url }}/icons/{{ social_network.network.value }}.png" alt="{{ social_network.network.label }}" height="32px" />
+	 		</a>
+	 	</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,32 @@
+{
+  "name": "eda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/gulp",
+    "build": "./node_modules/.bin/gulp build",
+    "proxy": "./node_modules/.bin/browser-sync start --proxy ll.test --no-ui --no-open",
+    "report": "./node_modules/.bin/gulp report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sizereport": "^1.2.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "natives": "^1.1.6"
+  }
+}

@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-4 mb-7 mb-md-0">
+        <h2 class="u-fs-extra-large mb-5">{{title}}</h2>
+        <p class="u-fs-small mb-0">{{content}}</p>
+        {% if link %}
+            <div class="pt-6">
+                <a href="{{link.url}}" class="c-button c-button--ghost c-button--medium" target="{{link.target?:"_self"}}" title="{{title}}">{{link.title}}</a>
+            </div>
+        {% endif %}
+    </div>			
+    <div class="col-md-6 offset-md-2">
+        <img src="{{Image(image).src("post-image")}}" class="w-100" alt="">
+    </div>
+</div>

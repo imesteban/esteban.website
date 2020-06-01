@@ -1,0 +1,23 @@
+<div class="row mx-md-n4">
+    {% for item in rows %}
+        {% set link = item.link %}
+        <div class="col-md-4 px-md-4 {{not loop.last?"mb-7 mb-md-0"}}">
+            {# Media #}
+            <div class="mb-4 mb-md-6">
+                <div class="o-crop o-crop--fill o-crop--4:3">
+                    <img src="{{Image(item.image).src( "post-image")}}" class="o-crop__content o-crop__content--center" alt="{{link.title}}">
+                </div>
+            </div>
+
+            {# Content #}
+            <p class="u-fs-tiny mb-0">{{item.content}}</p>
+
+            {# Link #}
+            {% if link %}
+                <div class="pt-4">
+                    <a href="{{link.url}}" class="c-button c-button--ghost c-button--medium" target="{{link.target?:"_self"}}" title="{{link.title}}">{{link.title}}</a>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

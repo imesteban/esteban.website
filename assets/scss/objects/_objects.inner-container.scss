@@ -1,0 +1,55 @@
+.o-inner-container {
+
+    width: 100%;
+    position: relative;
+    display: block;
+
+}
+
+
+
+/* ==========================================================================
+   Containers
+   ========================================================================== */
+
+// Example of use
+// .o-inner-container--small@mobile
+
+$container-sizes: (
+    'small': 		380px,
+    'medium': 		600px,
+    'medium-large': 900px,
+    'large': 		1100px,
+    // 'huge': 		1240px,
+    'fullwidth': 	100%
+) !default;
+ 
+
+@mixin container-sizes( $container-sizes, $breakpoint: null) {
+
+	@each $container-size, $container-size-value in $container-sizes {
+
+		// Make a rule in the format `.o-container--medium[@<breakpoint>]`.
+    	//$rule: '.o-container--#{$container-size}#{$breakpoint}';
+        $rule-inner: '.o-inner-container--#{$container-size}';
+
+    	// Build it.
+        #{$rule-inner} {
+            max-width: $container-size-value !important;
+        }
+	}
+
+}
+
+// Global helpers.
+@include container-sizes( $container-sizes );
+
+// // Responsive helpers.
+// @if ( variable-exists( mq-breakpoints ) ) {
+
+// 	@each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+// 	  @include mq($from: $inuit-bp-name) {
+// 	    @include inuit-container-sizes( $container-sizes, \@#{$inuit-bp-name} );
+// 	  }
+// 	}
+// }

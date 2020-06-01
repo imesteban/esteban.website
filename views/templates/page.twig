@@ -1,0 +1,18 @@
+{% extends "base-layout.twig" %}
+
+{% block content %}
+
+	{# Hero #}
+	{% include "components/hero.twig" with {
+		hero_title: post.title,
+		hero_image: Image(post.thumbnail).src("fullscreen") } %}
+
+    <div class="o-section">
+        <div class="container">
+			<div class="c-wp">
+				{{post.content}}
+			</div>   
+        </div>
+    </div>
+
+{% endblock %}

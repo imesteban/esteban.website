@@ -1,0 +1,30 @@
+{% extends "base-layout.twig" %}
+
+{% block content %}
+	
+	{# Hero #}
+	{% include "components/hero.twig" with {
+		hero_title: post.title,
+		hero_image: Image(post.thumbnail).src("fullscreen") } %}
+
+    <div class="o-section pb-7">
+        <div class="o-section__subsection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-5 mb-4 mb-md-0">
+                        <h2 class="u-fs-extra-large mb-5">{{post.page_subtitle}}</h2>
+                        <div class="c-wp u-fs-small">
+                            {{post.content}}
+                        </div>
+                    </div>
+                    <div class="col-md-6 offset-lg-1">
+                        {% filter shortcodes %}
+                            [contact-form-7 id="{{post.contact_form}}" title=""]
+                        {% endfilter %}
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

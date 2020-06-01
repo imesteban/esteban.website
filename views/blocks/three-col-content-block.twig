@@ -1,0 +1,8 @@
+{% extends "blocks/base-block.twig" %}
+
+{% block block_content %}
+
+    {% include "components/three-col-content.twig" with {
+        rows: fields.b_three_col_content } %}
+
+{% endblock %}

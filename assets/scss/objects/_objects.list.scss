@@ -1,0 +1,40 @@
+.o-list {
+
+    list-style: none;
+    padding: 0;
+    font-size: 0;
+    margin: 0;
+    @include media-breakpoint-up( md ){
+        margin: 0 -10px;
+    }
+    @include media-breakpoint-up( lg ){
+        margin: 0 -20px;
+    }
+
+    li {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        font-size: initial;
+        width: 100%;
+        margin: 0;
+        @include media-breakpoint-up( md ){
+            width: calc( (100% / 3 ) - 20px );
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        @include media-breakpoint-up( lg ){
+            width: calc( (100% / 3 ) - 40px );
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        + li {
+            @include media-breakpoint-down( sm ){
+                margin-top: 40px;
+            }
+            
+        }
+    }
+
+}

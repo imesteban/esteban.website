@@ -1,0 +1,77 @@
+{#
+ # Footer
+ #}
+
+<footer class="pt-7 pt-md-9 pb-6">
+    <div class="container-fullwidth">
+        <div class="row mb-6 mb-lg-8">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <div class="row">
+                    <div class="col-lg-3 mb-5 mb-lg-0">
+                        {# Logo #}
+                        {% include "components/logo.twig" with {
+                            is_logo_footer: true } %}
+                    </div>
+                    <div class="col-lg-9 u-fs-tiny pr-md-7">
+                        {# Footer more info #}
+                        <p class="u-fw-regular mb-5">{{options.info}}</p>
+                        <ul class="list-unstyled mb-0">
+                            {% if options.email %}
+                                <li class="list-unstyled mb-1">
+                                    <a href="mailto:{{options.email}}" class="u-fw-medium">{{options.email}}</a>    
+                                </li>
+                            {% endif %}
+                            {% if options.telephone %}
+                                <li class="list-unstyled">
+                                    <a href="tel:{{options.telephone}}" class="u-fw-medium">{{options.telephone}}</a>    
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="col-md-5 mb-5 mb-md-0">
+                        {# Footer menu column #}
+                        <ul class="list-unstyled mb-0 mb-lg-6">
+                            {% for item in footer_menu.items %}
+                                <li class="list-unstyled {{not loop.last?"mb-1"}}">
+                                    <a href="{{ item.get_link }}" class="u-fw-bold u-fs-tiny" target="{{item.target?:"_self"}}">{{ item.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-md-7">
+                        {# Social networks column #}
+                        <p class="u-fs-tiny u-fw-regular mb-5">{{options.social_networks_title|default("For news and updates on our menu follow us:")}}</p>
+                        {% if options.social_networks %}
+                            {% include "components/networks.twig" with {
+                                social_networks: options.social_networks } %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Last #}
+        <div class="row align-items-end">
+            <div class="col-sm-6">
+                <ul class="c-last u-fs-extra-tiny">
+                    <li>© {{ "now" | date( "Y" ) }} {{options.company_registration|default(site.name) }}</li>
+                    {% for item in website_menu.items %}
+                        <li><a href="{{ item.get_link }}" target="{{item.target?:"_self"}}">{{ item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                <div class="d-block d-sm-none">
+                    <span class="u-fs-extra-tiny">Site by <a href="mailto:contact@esteban.website" class="u-fw-bold">Me ;)</a></span>
+                </div>
+            </div>
+            <div class="col-sm-6 text-right">
+                <div class="d-none d-sm-inline-block">
+                    <span class="u-fs-extra-tiny">Site by <a href="mailto:contact@esteban.website" class="u-fw-bold">Me ;)</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

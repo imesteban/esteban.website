@@ -1,0 +1,17 @@
+.c-burger {
+
+    position: relative;
+    width: 24px;
+    display: block;
+
+    span {
+        display: block;
+        background-color: theme-color( "white" );
+        height: 3px;
+
+        + span {
+            margin-top: 5px;
+        }
+    }
+
+}

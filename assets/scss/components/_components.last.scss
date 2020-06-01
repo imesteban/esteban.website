@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Last
+   ========================================================================== */
+
+   .c-last {
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	//color: theme-color( "dimgray" );
+
+	li {
+
+		display: inline-block;
+		position: relative;
+		line-height: 1;
+		//font-size: 10px;
+		@include media-breakpoint-up( md ){
+			//font-size: 13px;
+		}
+
+	}
+
+	li + li {
+
+		margin-left: 12px;
+
+		&:before {
+
+			content: '|';
+			position: absolute;
+			bottom: 0px;
+			left: -9px;
+			//color: theme-color( "dimgray" );
+
+		}
+
+	}
+
+	a {
+		//color: theme-color( "dimgray" );
+		&:hover {
+			//color: lighten( theme-color( "dimgray" ), 20% );
+		}
+	}
+
+}

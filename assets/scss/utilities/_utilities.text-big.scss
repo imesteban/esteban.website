@@ -1,0 +1,12 @@
+.u-text-big {
+
+    @include font-bold();
+    font-size: 28px;
+    line-height: 1.6;
+    @include media-breakpoint-up( md ){
+        font-size: 38px;
+    }
+    @include media-breakpoint-up( lg ){
+        font-size: 45px;
+    }
+}

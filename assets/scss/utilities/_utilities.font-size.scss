@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Font sizes
+   ========================================================================== */
+
+.u-fs {
+
+	&-zero { font-size: 0; }
+
+	&-default {
+
+	}
+
+	&-extra-tiny { 
+		font-size: 14px;
+		line-height: 22px;
+	}
+
+	&-tiny { 
+		font-size: 22px;
+		line-height: 32px;
+	}
+
+	&-small { 
+		font-size: 26px;
+		line-height: 40px;
+	}
+
+	&-medium {
+		font-size: 25px;
+		line-height: 35px;
+		@include media-breakpoint-up( md ){
+			font-size: 30px;
+			line-height: 40px;
+		}
+	}
+
+	&-large {
+		font-size: 40px;
+		line-height: 50px;
+	}
+
+	&-extra-large {
+		font-size: 40px;
+		line-height: 50px;			
+		@include media-breakpoint-up( md ){
+			font-size: 50px;
+			line-height: 60px;
+		}
+	}
+
+	&-huge {
+		font-size: 70px;
+		line-height: 84px;
+	}	
+
+}

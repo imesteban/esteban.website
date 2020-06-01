@@ -1,0 +1,11 @@
+{% extends "blocks/base-block.twig" %}
+
+{% block block_content %}
+
+    {% include "components/flag.twig" with {
+        title:      fields.b_flag_title,
+        content:    fields.b_flag_content,
+        link:       fields.b_flag_link, 
+        image:      fields.b_flag_image } %}
+
+{% endblock %}

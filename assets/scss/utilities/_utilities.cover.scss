@@ -1,0 +1,28 @@
+.u-cover {
+
+    position: relative;
+
+    &--fullscreen {
+        width: 100%;
+        height: 640px;
+        @include media-breakpoint-up( md ){
+            height: 100vh;
+        }
+        
+    }
+
+    &--widescreen {
+        width: 100%;
+        height: 640px;
+        @include media-breakpoint-up( md ){
+            height: 50vh;
+        }
+        
+    }    
+
+    &--bg {
+        background: center center no-repeat;
+        background-size: cover;
+    }
+
+}

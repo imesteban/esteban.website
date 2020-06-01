@@ -1,0 +1,30 @@
+$section-distance-desk: 100px;
+$section-distance-mobile: 70px;
+
+.o-section {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding-top: $section-distance-mobile;
+    padding-bottom: $section-distance-mobile;
+    @include media-breakpoint-up( md ){
+        padding-top: $section-distance-desk;
+        padding-bottom: $section-distance-desk;
+    } 
+
+    &__subsection {
+        
+        + .o-section__subsection {
+            margin-top: calc(#{$section-distance-mobile}*0.5);
+            @include media-breakpoint-up( md ){
+                margin-top: $section-distance-desk;
+            } 
+        }
+    }
+
+    &:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}

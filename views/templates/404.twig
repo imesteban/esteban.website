@@ -1,0 +1,21 @@
+{% extends "base-layout.twig" %}
+
+{% block content %}
+
+	{# Hero #}
+	{% include "components/hero.twig" with {
+		hero_title: "Page not found" } %}
+
+	{# Content #}
+	<div class="container pb-8 pb-lg-9 pt-4 pt-lg-9 px-5 px-lg-9">
+		<div class="o-inner-container o-inner-container--medium-large mx-auto">
+			<h2 class="u-fw-bold u-fs-huge">404</h2>
+
+			<div class="c-wp mb-7">
+				<p class="mb-4">The page you requested doesn't exist.</p>
+				<a href="/" class="c-button" title="Back to the Homepage">Back to the homepage</a>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+/** 
+* Bootstrap container
+*/
+
+// M A I N  C O N T A I N E R
+.container {
+    position: relative;
+    max-width: $container-max-width  !important;
+    // padding-left: 10px;
+    // padding-right: 10px;
+    width: 100%;
+    padding-right: $container-padding;
+    padding-left: $container-padding;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-fullwidth {
+    position: relative;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include media-breakpoint-up( lg ){
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}

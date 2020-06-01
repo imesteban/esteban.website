@@ -1,0 +1,7 @@
+<div class="row mx-md-n4">
+    {% for item in rows %}
+        <div class="col-md-4 px-md-4 {{not loop.last?"mb-7 mb-md-0"}}">
+            <span class="u-fw-regular u-fs-medium">{{item.title}}</span>	
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,46 @@
+.c-hero {
+
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    background: center center no-repeat;
+    background-size: cover;
+    @include media-breakpoint-up( md ){
+        height: 480px;
+    }
+
+    &__inner {
+
+        position: absolute;
+        left: 0;
+        width: 100%;
+        bottom: 40px;
+        z-index: 1;
+        @include media-breakpoint-up( md ){
+            top: 65%;            
+            transform: translateY( -65% );
+            bottom: auto;
+        }
+
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background-color: theme-color( "primary" );
+        opacity: 0.10;
+        z-index: 0;
+    }
+
+    &--expand {
+        min-height: 700px;
+        @include media-breakpoint-up( md ){
+            height: 100vh;
+        } 
+    }
+
+}

@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+
+.c-menu-wrapper {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    transform: translateX( 100% );
+    transition: transform .2s ease-out;
+
+	&.open { 
+        transform: translateX( 0% );     
+    }
+
+}
+
+.c-menu {
+    
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    background-color: theme-color( "white" );
+
+    nav {
+        //top: 50%;
+        position: relative;
+        //transform: translateY(-50%);
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+
+	// list 
+	ul {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none; 
+        padding-top: 50px;
+        padding-bottom: 50px;       
+        
+		li > a {
+            position: relative;
+            @include font-bold();
+            font-size: 32px;
+            line-height: 1;
+            color: theme-color( "primary" );
+            z-index: 1;
+        }
+        
+		li > a:hover,
+		.current-menu-item a,
+		.current-page-ancestor a {
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: theme-color( "lightblue" );
+                z-index: -1;
+            }
+        }
+        
+        li + li {
+            margin-top: 25px;
+        }
+
+    }
+    
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+}

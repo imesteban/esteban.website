@@ -1,0 +1,156 @@
+{% extends "base-layout.twig" %}
+
+{% block header %}
+	{% include "partials/header.twig" with {
+		is_fixed: true } %}
+{% endblock %}
+
+{% block content %}
+
+	{# Hero #}
+	<div class="c-hero c-hero--expand" style="background-image:url({{Image(post.thumbnail).src("fullscreen")}});">
+		<div class="c-hero__inner">
+			<div class="container">
+				{% set m_title = post.meta( "multiline_title" ) %}
+				<h1 class="c-featured-title mb-7" id="js-main-title">
+					{% for item in m_title %}
+						<span data-aos="fade-right" data-aos-duration="800" data-aos-delay="{{loop.index*200}}" data-aos-offset="-50">{{item.text}}</span>
+					{% endfor %}
+				</h1>
+				{% set hero_button = post.hero_button %}
+				{% if hero_button %}
+					<div data-aos="fade-right" data-aos-duration="800" data-aos-delay="800" data-aos-anchor="#js-main-title">
+						<a href="{{hero_button.url}}" class="c-button" title="{{hero_button.title}}" target="{{hero_button.link.target?:"_self"}}">{{hero_button.title}}</a>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	{# Intro #}
+	<div class="o-section">
+		<div class="container">
+			<div data-aos="fade-up" data-aos-duration="800" data-aos-offset="250">
+				<p id="js-big-text" class="u-text-big m-0">
+					{{ post.meta( "intro" ) }}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	{# Top widescreen image #}
+	<div data-aos="fade-in" data-aos-duration="1500" data-aos-anchor="#js-big-text" data-aos-anchor-placement="bottom-center">
+		<div class="u-cover u-cover--widescreen u-cover--bg" style="background-image:url({{Image(post.fullscreen_background_top).src("fullscreen")}});"></div>
+	</div>
+
+	{# Main content #}
+	<div class="o-section clearfix">
+
+		{# Top pattern #}
+		<div data-aos="fade-in" data-aos-duration="2000" data-aos-offset="100">
+			<div class="w-50 mb-8 mb-md-9">
+				<span class="c-pattern"></span>
+			</div>
+		</div>
+
+		<div class="o-section__subsection">
+			<div class="container">
+				{% set three_col = post.meta( "three_column_text") %}
+				<div class="row mx-md-n4">				
+					{% for item in three_col %}
+						<div class="col-md-4 mb-4 mb-md-0 px-md-4">
+							<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{loop.index*150}}">
+								<span class="u-fw-regular u-fs-medium">{{item.text}}</span>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="o-section__subsection">
+			<div class="container pt-6">
+				{% set place = post.meta( "place" ) %}
+				<div class="row">
+					<div class="col-md-4 mb-7 mb-md-0">
+						<div data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
+							<h2 class="u-fs-extra-large mb-5">{{place.title}}</h2>
+							<p class="u-fs-small mb-6">{{place.content}}</p>
+							{% if place.link %}
+								<a href="{{place.link.url}}" class="c-button c-button--ghost c-button--medium" target="{{place.link.target?:"_self"}}" title="{{place.link.title}}">{{place.link.title}}</a>
+							{% endif %}
+						</div>
+					</div>			
+					<div class="col-md-6 offset-md-2">
+						<div data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+							<img src="{{Image(place.image).src|resize(800)}}" class="w-100" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="o-section__subsection">
+			<div class="container">
+				{% set links = post.meta( "more_links" ) %}
+				<div class="row mx-md-n4">
+					{% for item in links %}
+						<div class="col-md-4 mb-6 mb-md-0 px-md-4">
+							<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{loop.index*150}}">
+								<div class="c-wp u-fs-small u-fw-medium mb-4 mb-md-5">{{item.content}}</div>
+								<a href="{{item.link.url}}" class="c-button c-button--ghost c-button--medium" target="{{item.link.target?:"_self"}}" title="{{item.link.title}}">{{item.link.title}}</a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		{# Bottom pattern #}
+		<div data-aos="fade-in" data-aos-duration="2000" data-aos-offset="200">
+			<div class="w-50 mt-8 mt-md-10 float-right">
+				<span class="c-pattern c-pattern--right"></span>
+			</div>
+		</div>
+
+	</div>
+
+
+	{# Bottom fullscreen image / content #}
+	{% set fs_content = post.meta( "fullscreen_content" ) %}
+	<div class="u-cover u-cover--fullscreen u-cover--bg" style="background-image:url({{Image(fs_content.background).src("fullscreen")}});">
+		<div class="position-relative d-table w-100 h-100">
+			<div class="d-table-cell align-middle">
+				<div class="container text-center">
+					<div class="d-block mb-3 mb-md-6">
+						<h2 class="c-featured-title d-inline-block">
+							<span>{{fs_content.title}}</span>
+						</h2>
+					</div>
+					<div data-aos="fade-in" data-aos-duration="800" data-aos-delay="200">
+						<div class="d-block">
+							<a href="{{fs_content.link.url}}" class="c-button" target="{{fs_content.link.target?:"_self"}}" title="{{fs_content.link.title}}">{{fs_content.link.title}}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block javascript %}
+
+	<script type="text/javascript">
+		$( document ).ready( function() {
+
+			// initialization
+			AOS.init( {
+				disable: APP.isTablet,
+				once: true,
+			} );
+
+		} );
+	</script>
+
+{% endblock %}
